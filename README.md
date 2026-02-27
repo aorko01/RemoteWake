@@ -107,6 +107,8 @@ Or configure a persistent named tunnel pointing to `http://localhost:3000` on yo
 #define PC_SHUTDOWN_URL "http://192.168.0.109:8080/shutdown"  // Desktop's local IP
 ```
 
+> **Note:** The IP `192.168.0.109` must be reserved for the Ubuntu desktop in your router's DHCP settings (sometimes called a "DHCP reservation" or "static lease"). Log into your router/WiFi admin panel, find the DHCP reservation section, and bind `192.168.0.109` to the desktop's MAC address. This ensures the desktop always gets the same IP and the ESP32 can always reach it.
+
 2. Install the required Arduino libraries:
    - **ArduinoJson** (by Benoit Blanchon)
    - Built-in ESP32 libraries: `WiFi`, `HTTPClient`, `WiFiUdp`
